@@ -140,3 +140,4 @@ C:\Users\gabar\OneDrive\Área de Trabalho\Programação\BuscaCidades\SistemaCida
 C:\Users\gabar\OneDrive\Área de Trabalho\Programação\BuscaCidades\SistemaCidadesRaio\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\gabar\OneDrive\Área de Trabalho\Programação\BuscaCidades\SistemaCidadesRaio\obj\Debug\net9.0\SistemaCidadesRaio.csproj.AssemblyReference.cache
 C:\Users\gabar\OneDrive\Área de Trabalho\Programação\BuscaCidades\SistemaCidadesRaio\obj\Debug\net9.0\SistemaC.C047144E.Up2Date
+C:\Users\gabar\OneDrive\Área de Trabalho\Programação\BuscaCidades\SistemaCidadesRaio\bin\Debug\net9.0\Data\cidades.csv
