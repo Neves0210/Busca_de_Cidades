@@ -38,6 +38,8 @@ namespace SistemaCidadesRaio.Controllers
             if (!vm.CidadeOrigemId.HasValue || !vm.RaioKm.HasValue || !vm.QuantidadeMaxima.HasValue)
                 return View(vm);
 
+            vm.CidadeOrigem = _cidadeService.ObterCidadePorId(vm.CidadeOrigemId.Value);
+
             vm.Resultados = _cidadeService.ObterCidadesPorRaio(
                 vm.CidadeOrigemId.Value,
                 vm.RaioKm.Value,

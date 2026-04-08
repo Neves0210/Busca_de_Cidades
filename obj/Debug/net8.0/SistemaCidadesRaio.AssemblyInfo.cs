@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SistemaCidadesRaio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a581562c975f895e7af34d872cc63d598090db11")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd68309c71fe629f0a410ce72fecb95c1e215458")]
 [assembly: System.Reflection.AssemblyProductAttribute("SistemaCidadesRaio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SistemaCidadesRaio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

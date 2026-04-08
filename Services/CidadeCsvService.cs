@@ -226,5 +226,10 @@ namespace SistemaCidadesRaio.Services
                 _ => string.Empty
             };
         }
+
+        public CidadeModel? ObterCidadePorId(int cidadeId)
+        {
+            return ObterCidades().FirstOrDefault(x => x.CidadeId == cidadeId);
+        }
     }
 }
