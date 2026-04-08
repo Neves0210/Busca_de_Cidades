@@ -8,10 +8,14 @@ namespace SistemaCidadesRaio.Controllers
     public class CidadesRaioController : Controller
     {
         private readonly CidadeCsvService _cidadeService;
+        private readonly CidadeServiceDb _cidadeDbService;
 
-        public CidadesRaioController(CidadeCsvService cidadeService)
+        public CidadesRaioController(
+            CidadeCsvService cidadeService,
+            CidadeServiceDb cidadeDbService)
         {
             _cidadeService = cidadeService;
+            _cidadeDbService = cidadeDbService;
         }
 
         [HttpGet]
@@ -40,11 +44,21 @@ namespace SistemaCidadesRaio.Controllers
 
             vm.CidadeOrigem = _cidadeService.ObterCidadePorId(vm.CidadeOrigemId.Value);
 
-            vm.Resultados = _cidadeService.ObterCidadesPorRaio(
+            var resultados = _cidadeService.ObterCidadesPorRaio(
                 vm.CidadeOrigemId.Value,
                 vm.RaioKm.Value,
                 vm.QuantidadeMaxima.Value
             );
+
+            var cidadesNovas = _cidadeDbService.ObterCidadesNaoEnviadas(resultados);
+
+            var idsCidadesNovas = cidadesNovas
+                .Select(x => x.CidadeId)
+                .ToHashSet();
+
+            vm.Resultados = resultados
+                .Where(x => idsCidadesNovas.Contains(x.CidadeId))
+                .ToList();
 
             return View(vm);
         }
@@ -70,7 +84,7 @@ namespace SistemaCidadesRaio.Controllers
                 .Select(x => new SelectListItem
                 {
                     Value = x.CidadeId.ToString(),
-                    Text = $"{x.Nome}/{x.UF} - DDD {x.Ddd}"
+                    Text = $"{x.Nome}/{x.UF}"
                 })
                 .ToList();
         }
